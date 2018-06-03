@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="/css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="/css/style.css" type="text/css" />
+	<link rel="stylesheet" href="/css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="/css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="/css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="/css/magnific-popup.css" type="text/css" />
+
+	<link rel="stylesheet" href="/css/responsive.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!-- Select-Boxes CSS -->
+	<link rel="stylesheet" href="/css/components/select-boxes.css" type="text/css" />
+
+	<link rel="stylesheet" href="/css/responsive.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- Document Title
+	============================================= -->
+	<title>Profile Page</title>
+
+</head>
+
+<body class="stretched">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="dark full-header sticky">
+
+			<div id="header-wrap">
+
+				<div class="container clearfix">
+
+					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+					<!-- Logo
+					============================================= -->
+					<div id="logo">
+						<a href="/" class="standard-logo" data-dark-logo="/images/logo-dark.png"><img src="/images/logo-dark.png" ></a>
+					</div><!-- #logo end -->
+
+					<div id="top-account" class="dropdown">
+						<a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="icon-user"></i><i class="icon-angle-down"></i></a>
+						<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+							<li><a href="user/profile/settings">Update Profile</a></li>
+							
+
+							<li role="separator" class="divider"></li>
+							<li><a href="/logout">Logout <i class="icon-signout"></i></a></li>
+						</ul>
+					</div>
+
+					<!-- Primary Navigation
+					============================================= -->
+					<nav id="primary-menu">
+
+						
+
+						
+
+						
+					</nav><!-- #primary-menu end -->
+
+				</div>
+
+			</div>
+
+		</header><!-- #header end -->
+
+		<!-- Content
+		============================================= -->
+		<section id="content"  style="margin-top:50px">
+
+			<div class="content-wrap">
+
+				<div class="container clearfix">
+
+					<div class="row clearfix">
+
+						<div class="col-sm-9">
+
+							<img src="<%= bio.profile_pic %>" class="alignleft img-circle img-thumbnail notopmargin nobottommargin" alt="bio.profile_pic" style="max-width: 100px;">
+
+							<div class="heading-block noborder">
+								<h3><%= bio.name %></h3>
+								<span><%= currentUser.position  %></span>
+							</div>
+
+							<div class="clear"></div>
+
+
+							<div class="row clearfix">
+
+								<div class="col-md-12">
+
+									<div class="tabs tabs-alt clearfix" id="tabs-profile">
+
+										<ul class="tab-nav clearfix">
+
+											<li><a href="#tab-posts"><i class="icon-pencil2"></i> Posts</a></li>
+											
+                                            <li><a href="#tab-connections"><i class="icon-upload"></i> Upload</a></li>
+
+								
+											</li>
+										</ul>
+
+										<div class="tab-container">
+
+											<div class="tab-content clearfix" id="tab-posts">
+
+<div class="row topmargin-sm clearfix">
+
+													<div class="col-xs-12 bottommargin-sm">
+														<div class="ipost clearfix">
+															<div class="row clearfix">
+																<div class="col-sm-4">
+																	<div class="entry-image">
+																		<a href="images/back.jpg" data-lightbox="image"><img class="image_fade" src="images/back.jpg" alt="Standard Post with Image"></a>
+																	</div>
+																</div>
+																<div class="col-sm-8">
+																	<div class="entry-title">
+																		<h3><a href="blog-single.html">This is a Standard post with a Preview Image</a></h3>
+																	</div>
+																	<ul class="entry-meta clearfix">
+																		<li><i class="icon-calendar3"></i> 10th Feb 2014</li>
+														
+																	</ul>
+																	<div class="entry-content">
+																		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in.</p>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													
+													
+												                                                    <% for(i=count-1;i>=0; i=i-1){
+													if(posts[i].category == 'image' && posts[i].approval_status == true){
+													 %>
+													
+													
+													<div class="col-xs-12 bottommargin-sm">
+														<div class="ipost clearfix">
+															<div class="row clearfix">
+																<div class="col-sm-4">
+																	<div class="entry-image">
+																		<a href="<%= posts[i].dataValues.url %>" data-lightbox="image"><img class="image_fade" src="<%= posts[i].dataValues.url %>" alt="Standard Post with Image"></a>
+																	</div>
+																</div>
+																<div class="col-sm-8">
+																	<div class="entry-title">
+																		<h3><a href="blog-single.html"><%= posts[i].dataValues.title %></a></h3>
+																	</div>
+																	<ul class="entry-meta clearfix">
+																		<li><i class="icon-calendar3"></i><%= posts[i].dataValues.uploaded_at %></li>
+
+																	</ul>
+																	<div class="entry-content">
+																		<p><%= posts[i].dataValues.biLiner %></p>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+
+                                                     <%}%>
+													  <%}%>
+
+
+
+
+												</div>
+
+											</div>
+											
+											<div class="tab-content clearfix" id="tab-connections">
+
+												<div id="job-apply" class="heading-block">
+							<h2>Upload Now</h2>
+							<span></span>
+						</div>
+
+
+						<div class="contact-widget">
+
+							<div class="contact-form-result"></div>
+
+							<form action="/photo/<%= currentUser.id %>/upload" method="POST">
+
+								<div class="form-process"></div>
+
+								
+
+								<div class="clear"></div>
+
+								<div class="col_full">
+									<label for="template-jobform-email">Title <small>*</small></label>
+									<input type="text" id="template-jobform-email" name="title" value="" class="required sm-form-control" />
+								</div>
+
+								<div class="col_half">
+									<label for="template-jobform-age">Bi-liner <small>*</small></label>
+									<input type="text" name="biliner" id="template-jobform-age" value="" size="22" tabindex="4" class="sm-form-control required" />
+								</div>
+								<div class="col_full">
+									<label for="template-jobform-cvfile">Upload Picture <small></small></label>
+									<input type="file" id="template-jobform-cvfile" name="url" value="" class=" sm-form-control" />
+								</div>
+
+								<div class="col_full">
+									<label for="template-jobform-cvfile">Category <small></small></label>
+									<input type="text" name="subcategory" value="" class="sm-form-control" />
+								</div>
+
+								<div class="clear"></div>
+								
+<!-- 								<div class="col_full">
+									<label for="template-jobform-application">Write your work <small></small></label>
+									<textarea name="subcategory" id="template-jobform-application" rows="6" tabindex="11" class="sm-form-control "></textarea>
+								</div>
+ -->
+								<div class="col_full">
+									<button class="button button-3d button-large btn-block nomargin" name="template-jobform-apply" type="submit" value="apply">Send your work for approval</button>
+								</div>
+
+							</form>
+
+						</div>
+											</div>
+											
+											
+																
+
+
+
+										</div>
+
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="line visible-xs-block"></div>
+
+						<div class="col-sm-3 clearfix">
+
+						
+
+							<div class="fancy-title topmargin title-border">
+								<h4>About Me</h4>
+							</div>
+                           <p id="aboutme"><%= bio.bio_text %></p>
+
+
+
+							<div class="fancy-title topmargin title-border">
+								<h4>Social Profiles</h4>
+							</div>
+
+							<a href="<%=bio.fb%>" target="_blank" id="fblink" class="social-icon si-facebook si-small si-rounded si-light" title="Facebook">
+								<i class="icon-facebook"></i>
+								<i class="icon-facebook"></i>
+                            </a>
+
+							<a href="<%=bio.linkedin%>" id="linkedinlink" class="social-icon si-linkedin si-small si-rounded si-light" title="LinkedIn">
+								<i class="icon-linkedin"></i>
+								<i class="icon-linkedin"></i>
+							</a>
+
+
+							
+						</div>
+
+    
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</section><!-- #content end -->
+
+<!-- Footer
+		============================================= -->
+		<footer id="footer" class="dark">
+
+			<!-- Copyrights
+			============================================= -->
+			<div id="copyrights">
+
+				<div class="container clearfix">
+
+					<div class="col_half">
+						Copyrights &copy; 2018 All Rights Reserved by DTU Times<br>
+						<div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
+					</div>
+
+					<div class="col_half col_last tright">
+
+
+						<div class="clear"></div>
+
+						Any queries feel free to Contact <span class="middot">&middot;</span> <i class="icon-headphones"></i> +91-8449349990 <span class="middot">&middot; Rajyavardhan Singh</span>
+					</div>
+
+				</div>
+
+			</div><!-- #copyrights end -->
+
+		</footer><!-- #footer end -->
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- External JavaScripts
+	============================================= -->
+	<script type="text/javascript" src="/js/jquery.js"></script>
+	<script type="text/javascript" src="/js/plugins.js"></script>
+	<!-- Select-Boxes Plugin -->
+	<script type="text/javascript" src="/js/components/select-boxes.js"></script>
+
+	<!-- Select-Splitter Plugin -->
+	<script type="text/javascript" src="/js/components/selectsplitter.js"></script>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script type="text/javascript" src="/js/functions.js"></script>
+
+	<script>
+		jQuery( "#tabs-profile" ).on( "tabsactivate", function( event, ui ) {
+			jQuery( '.flexslider .slide' ).resize();
+		});
+	</script>
+		<script type="text/javascript">
+		jQuery(document).ready( function($){
+
+			// Multiple Select
+			$(".select-1").select2({
+				placeholder: "Select Multiple Values"
+			});
+
+			// Loading array data
+			var data = [{ id: 0, text: 'enhancement' }, { id: 1, text: 'bug' }, { id: 2, text: 'duplicate' }, { id: 3, text: 'invalid' }, { id: 4, text: 'wontfix' }];
+			$(".select-data-array").select2({
+			  data: data
+			})
+			$(".select-data-array-selected").select2({
+			  data: data
+			});
+
+			// Enabled/Disabled
+			$(".select-disabled").select2();
+			$(".select-enable").on("click", function () {
+				$(".select-disabled").prop("disabled", false);
+				$(".select-disabled-multi").prop("disabled", false);
+			});
+			$(".select-disable").on("click", function () {
+				$(".select-disabled").prop("disabled", true);
+				$(".select-disabled-multi").prop("disabled", true);
+			});
+
+			// Without Search
+			$(".select-hide").select2({
+				minimumResultsForSearch: Infinity
+			});
+
+			// select Tags
+			$(".select-tags").select2({
+				tags: true
+			});
+
+			// Select Splitter
+			$('.selectsplitter').selectsplitter();
+
+		});
+	</script>
+
+</body>
+</html>

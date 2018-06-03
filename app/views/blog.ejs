@@ -1,0 +1,319 @@
+<!DOCTYPE ejs>
+<ejs dir="ltr" lang="en-US">
+<head>
+     <link rel="icon" href="images/logofav1.png" type="image/gif">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="Sandeep/Rajyavardhan" content="DTU Times" />
+	<meta property="fb:pages" content="145561028808040" />
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111767284-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111767284-1');
+</script>
+	<!-- Stylesheets
+	============================================= -->
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<link rel="stylesheet" href="css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+
+	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	
+	<!-- Document Title
+	============================================= -->
+	<title>DTU Times Blog</title>
+
+</head>
+
+<body class="stretched">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="dark full-header sticky">
+
+			<div id="header-wrap">
+
+				<div class="container clearfix">
+
+					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+					<!-- Logo
+					============================================= -->
+					<div id="logo">
+						<a href="index.ejs" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/logo.png" ></a>
+
+					</div><!-- #logo end -->
+
+									<!-- Primary Navigation
+					============================================= -->
+			        <nav id="primary-menu">
+
+						<ul>
+							<li><a href="index.ejs"><div>Home</div></a>
+							</li>
+								
+							<li class="mega-menu"><a href="about.ejs"><div>About Us</div></a>
+                            </li>
+								
+				            <li class="mega-menu"><a href="editions.ejs"><div>Editions</div></a>
+						    </li>
+							                            <li><a href="blog.ejs"><div>Blog</div></a>
+							</li>
+				            
+				            <li><a href="gallery.ejs"><div>Gallery</div></a>
+							</li>
+						    				
+							<li><a href="team.ejs"><div>Team</div></a>
+							</li>
+                             <li><a href="dtu%20contact.ejs"><div>Contact Us</div></a>
+							</li>                       
+
+				        </ul>
+						
+
+					</nav><!-- #primary-menu end -->
+
+
+				</div>
+
+			</div>
+
+		</header><!-- #header end -->
+
+		<!-- Page Title
+		============================================= -->
+		<section id="page-title">
+
+			<div class="container clearfix">
+				<h1>Blog</h1>
+				<span>Latest Blog Posts</span>
+				<ol class="breadcrumb">
+					<li><a href="#"></a></li>
+					<li class="active"></li>
+				</ol>
+			</div>
+
+		</section><!-- #page-title end -->
+
+		<section id="content">
+
+			<div class="content-wrap">
+
+				<div class="container clearfix">
+
+					<!-- Posts
+					============================================= -->
+					<div id="posts" class="post-grid grid-container post-masonry post-timeline grid-2 clearfix">
+
+						<div class="timeline-border"></div>
+
+						<div class="entry entry-date-section"><span>2018</span></div>
+
+						<div class="entry clearfix">
+							<div class="entry-timeline">
+								<div class="timeline-divider"></div>
+							</div>
+							<div class="entry-image">
+								<a href="images/blogs/1.jpg" data-lightbox="image"><img class="image_fade" src="images/blogs/1.jpg"></a>
+							</div>
+							<div class="entry-title">
+								<h2><a rel="noopener noreferrer"  target="_blank" href="https://dtutimes.wordpress.com/2017/12/02/repainting/">Repainting</a></h2>
+							</div>
+							<ul class="entry-meta clearfix">
+								<li><i class="icon-calendar3"></i> 2 November 2017</li>
+								
+								<li><i class="icon-camera-retro"></i></li>
+							</ul>
+							<div class="entry-content">
+								<p>Kripi Badonia, 2nd Year, IT muses on about being the canvas to someone else’s brush and easel!</p>
+								<a rel="noopener noreferrer"  target="_blank" href="https://dtutimes.wordpress.com/2017/12/02/repainting/"class="more-link">Read More</a>
+							</div>
+						</div>
+						
+						
+						
+						<% posts.forEach(function(post){
+												
+                        if(post.category == 'article' && post.approval_status == true ){%>
+						
+						<div class="entry clearfix">
+							<div class="entry-timeline">
+								<div class="timeline-divider"></div>
+							</div>
+							<div class="entry-image">
+								<a href="<%= post.dataValues.url %>" data-lightbox="image"><img class="image_fade" src="<%= post.dataValues.url %>"></a>
+							</div>
+							<div class="entry-title">
+								<h2><a rel="noopener noreferrer"  target="_blank" href="/column/<%= post[i]._id %>"><%= post.dataValues.title %></a></h2>
+							</div>
+							<ul class="entry-meta clearfix">
+								<li><i class="icon-calendar3"></i> <%= post.dataValues.uploaded_at %></li>
+								
+								<li><i class="icon-camera-retro"></i></li>
+							</ul>
+							<div class="entry-content">
+								<p><%= post.dataValues.biLiner %></p>
+								<a rel="noopener noreferrer"  target="_blank" href="/column/<%= post[i]._id %>"class="more-link">Read More</a>
+							</div>
+						</div>
+						
+
+                                          <%}%>
+									<%})%>
+						
+
+
+
+					</div><!-- #posts end -->
+
+					<div id="load-next-posts" class="center">
+						<a href="blog-timeline-2.html" class="button button-3d button-dark button-large button-rounded">Load more..</a>
+					</div>
+					
+				</div>
+
+			</div>
+
+		</section><!-- #content end -->
+
+				<!-- Footer
+		============================================= -->
+	<footer id="footer"  class="footer">
+
+   
+		<div id="copyrights" style="background:black;">
+      <div class="footer-content" >
+            <div class="container">
+                <div class="row">
+                <div class="footer-col col-md-3 col-sm-4 about">
+                    <div class="footer-col-inner">
+                        <h3 style=" color:white">About</h3>
+                        <ul>
+                            <li><a target="_blank" rel="noopener noreferrer" href="team.ejs"><i class="fa fa-caret-right"></i>Team</a></li>
+                            <li><a target="_blank" rel="noopener noreferrer" href="dtu%20contact.ejs"><i class="fa fa-caret-right"></i>Contact us</a></li>
+                            <li><a target="_blank" rel="noopener noreferrer" href="blog.ejs" target="_blank"><i class="fa fa-caret-right"></i>Blog</a></li>
+                        </ul>
+                    </div><!--//footer-col-inner-->
+                </div><!--//foooter-col-->
+                <div class="footer-col col-md-6 col-sm-8 newsletter">
+                    <div class="footer-col-inner">
+                        <h3 style=" color:white">Connect with us</h3>
+                         <div class="fb-page fb_iframe_widget" data-href="https://www.facebook.com/dtutimes" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true" width="500" height="70" fb-xfbml-state="rendered" fb-iframe-plugin-query="adapt_container_width=true&amp;app_id=&amp;container_width=525&amp;height=70&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fdtutimes&amp;locale=en_US&amp;sdk=joey&amp;show_facepile=true&amp;show_posts=true&amp;small_header=false&amp;width=500"><span style="vertical-align: bottom; width: 500px; height: 130px;"><iframe name="fe688d5ca8efe8" width="500px" height="70px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:page Facebook Social Plugin" src="https://www.facebook.com/v2.3/plugins/page.php?adapt_container_width=true&amp;app_id=&amp;channel=http%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2FhsBwMj6iLmk.js%3Fversion%3D42%23cb%3Df12117d65227ca8%26domain%3Ddtutimes.dtu.ac.in%26origin%3Dhttp%253A%252F%252Fdtutimes.dtu.ac.in%252Ff28a46f0a178c94%26relation%3Dparent.parent&amp;container_width=525&amp;height=70&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fdtutimes&amp;locale=en_US&amp;sdk=joey&amp;show_facepile=true&amp;show_posts=true&amp;small_header=false&amp;width=500" style="border: none; visibility: visible; width: 500px; height: 130px;" class=""></iframe></span></div>
+                	
+                        
+                    </div><!--//footer-col-inner-->
+                </div><!--//foooter-col--> 
+                <div class="footer-col col-md-3 col-sm-12 contact">
+                    <div class="footer-col-inner">
+                        <h3 style=" color:white">Contact us</h3>
+                        <div class="row">
+                            <p class="email col-md-12 col-sm-4"><i class="fa fa-envelope"></i><a href="mailto:dtutimes@dtu.ac.in">dtutimes@dtu.ac.in</a></p>  
+                        </div> 
+                    </div><!--//footer-col-inner-->            
+                </div><!--//foooter-col-->   
+                </div>   
+            </div>        
+        </div><!--//footer-content-->
+        <div class="bottom-bar">
+            <div class="container">
+                <div class="row">
+                    <small class="copyright col-md-6 col-sm-12 col-xs-12" style="color:white">Copyright &copy; 2018 DTU Times</small>
+                    <ul class="social pull-right col-md-6 col-sm-12 col-xs-12">
+                        <li><a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/dtutimes"><i class="fa fa-facebook"></i></a></li>
+                    </ul><!--//social-->
+                </div><!--//row-->
+            </div><!--//container-->
+        </div><!--//bottom-bar-->
+   
+
+			</div><!-- #copyrights end -->
+
+		</footer>
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- External JavaScripts
+	============================================= -->
+	<!-- External JavaScripts
+	============================================= -->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/plugins.js"></script>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script type="text/javascript" src="js/functions.js"></script>
+	<script type="text/javascript">
+
+    
+
+
+		jQuery(window).load(function(){
+
+			var $container = $('#posts');
+
+			$container.isotope({
+				itemSelector: '.entry',
+				masonry: {
+					columnWidth: '.entry:not(.entry-date-section)'
+				}
+			});
+
+			$container.infinitescroll({
+				loading: {
+					finishedMsg: '<i class="icon-line-check"></i>',
+					msgText: '<i class="icon-line-loader icon-spin"></i>',
+					img: "images/preloader-dark.gif",
+					speed: 'normal'
+				},
+				state: {
+					isDone: false
+				},
+				nextSelector: "#load-next-posts a",
+				navSelector: "#load-next-posts",
+				itemSelector: "div.entry",
+				behavior: 'portfolioinfiniteitemsloader'
+			},
+			function( newElements ) {
+				$container.isotope( 'appended', $( newElements ) );
+				var t = setTimeout( function(){ $container.isotope('layout'); }, 2000 );
+				SEMICOLON.initialize.resizeVideos();
+				SEMICOLON.widget.loadFlexSlider();
+				SEMICOLON.widget.masonryThumbs();
+				var t = setTimeout( function(){
+					SEMICOLON.initialize.blogTimelineEntries();
+				}, 2500 );
+			});
+
+			var t = setTimeout( function(){
+				SEMICOLON.initialize.blogTimelineEntries();
+			}, 2500 );
+
+			$(window).resize(function() {
+				$container.isotope('layout');
+				var t = setTimeout( function(){
+					SEMICOLON.initialize.blogTimelineEntries();
+				}, 2500 );
+			});
+
+		});
+
+	</script>
+
+
+</body>
+</ejs>
